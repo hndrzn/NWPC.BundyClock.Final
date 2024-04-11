@@ -1,0 +1,54 @@
+﻿@page
+@using Microsoft.AspNetCore.Components.Web
+@namespace NWPC.BundyClock.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="NWPC.BundyClock.styles.css" />
+    <link rel="stylesheet" href="_content/MudBlazor/MudBlazor.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor.ThemeManager/MudBlazorThemeManager.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head> 
+
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="scripts/dateandtime.js"></script>
+    <script src="scripts/keypadfunctions.js"></script>
+    <script src="scripts/bundySelection.js"></script>
+    <script>
+        function startClock()
+        {
+            // call in functions from 'dateAndTime.js'
+            updateTime();
+            setInterval(updateTime, 1000);
+
+            // call in functions from 'keypadFunctions.js'
+            updateInput(value);
+            deleteLast(value);
+            appendToInput(value);
+            toggleKeypad();
+        }
+
+    </script>
+</body>
+
+</html>

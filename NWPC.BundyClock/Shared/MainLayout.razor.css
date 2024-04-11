@@ -1,0 +1,91 @@
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.nwpc-banner {
+    left: 1%;
+    top: 1%;
+    position: fixed;
+    z-index: 3;
+    max-width: 50vw;
+    height: auto;
+}
+
+/*-----------------------------------------------------*/
+/* Custom CSS shapes for UI Design*/
+
+.bottom-border {
+    background: #b6e556;
+    width: 100vw;
+    height: 14vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.second-bottom-border {
+    background: #96ca2f;
+    width: 99vw;
+    height: 12vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.third-bottom-border {
+    background: #82b710;
+    width: 98vw;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.top-border {
+    background: #b6e556;
+    width: 100vw;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.second-top-border {
+    background: #96ca2f;
+    width: 99vw;
+    height: 13vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.third-top-border {
+    background: #82b710;
+    width: 98vw;
+    height: 11vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+/*-----------------------------------------------------*/

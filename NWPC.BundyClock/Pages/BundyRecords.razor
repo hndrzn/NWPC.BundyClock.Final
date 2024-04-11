@@ -1,0 +1,48 @@
+﻿@page "/bundyRecords"
+@inject IBundyRecordsService BundyRecordsService
+
+<h3>Bundy Records</h3>
+
+<div class="container">
+@if (AllBundyRecords != null && AllBundyRecords.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th>Bundy Type</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in AllBundyRecords)
+            {
+                <tr>
+                    <td>@record.EmployeeName</td>
+                    <td>@record.EmployeeID</td>
+                    <td>@record.BundyType</td>
+                    <td>@record.CurrentDate</td>
+                    <td>@record.CurrentTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Bundy records found.</p>
+}
+</div>
+
+<div class="container-two"></div>
+
+@code {
+    List<BundyRecord> AllBundyRecords;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AllBundyRecords = await BundyRecordsService.GetAllBundyRecordsAsync();
+    }
+}

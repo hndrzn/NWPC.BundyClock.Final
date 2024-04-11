@@ -1,0 +1,57 @@
+﻿@page "/bundySuccess"
+@inject IBundyStateService BundyStateService
+@inject NavigationManager NavigationManager
+
+<div class="container">
+    @if (!string.IsNullOrWhiteSpace(BundyStateService.BundyType))
+    {
+        @if (!string.IsNullOrWhiteSpace(BundyStateService.EmployeeName))
+        {
+            <div class="employeeInfo-container">
+                <img src="@($"data:image/jpeg;base64,{Convert.ToBase64String(BundyStateService.EmployeePhoto)}")" alt="Employee Photo" style="width: 163px; height: 163px; border-radius: 50%; border: 2px solid #000;" />
+                <div>@BundyStateService.EmployeeName (@BundyStateService.EmployeeID)</div>
+            </div>
+        }
+
+        @if (BundyStateService.BundyType.ToLower() == "time in")
+        {
+            <div class="button-container">
+                <button type="submit" class="time-in" disabled>Time In</button>
+            </div>
+        }
+        else if (BundyStateService.BundyType.ToLower() == "time out")
+        {
+            <div class="button-container">
+                <button type="submit" class="time-out" disabled>Time Out</button>
+            </div>
+        }
+        else if (BundyStateService.BundyType.ToLower() == "lunch in")
+        {
+            <div class="button-container">
+                <button type="submit" class="lunch-in" disabled>Lunch In</button>
+            </div>
+        }
+        else if (BundyStateService.BundyType.ToLower() == "lunch out")
+        {
+            <div class="button-container">
+                <button type="submit" class="lunch-out" disabled>Lunch Out</button>
+            </div>
+        }
+        <div class="message-container">
+            <p class="message">Today is <span style="font-weight: bold;">@BundyStateService.CurrentDate</span>, and your '@BundyStateService.BundyType' is <span style="font-weight: bold;">@BundyStateService.CurrentTime</span>.</p>
+            <p class="refresh-message">This page will refresh in a moment <span class="loading-icon"></span></p>
+        </div>
+    }
+</div>
+<div class="container-two"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(5000); // Delay for 5 seconds
+            NavigationManager.NavigateTo("/"); // Redirect to the home page
+        }
+    }
+}

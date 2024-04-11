@@ -1,0 +1,33 @@
+﻿.container {
+    background: #ffffff;
+    border: 6px solid;
+    border-color: #4cbb17;
+    border-radius: 30px;
+    width: 50vw;
+    height: 60vh;
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-two {
+    background: #82b710;
+    width: 50vw;
+    height: 65vh;
+    border-radius: 30px;
+    position: fixed;
+    left: 48%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}

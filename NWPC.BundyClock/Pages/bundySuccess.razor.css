@@ -1,0 +1,113 @@
+﻿.container {
+    background: #ffffff;
+    border: 6px solid;
+    border-color: #4cbb17;
+    border-radius: 30px;
+    width: 50vw;
+    height: 60vh;
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-two {
+    background: #82b710;
+    width: 50vw;
+    height: 65vh;
+    border-radius: 30px;
+    position: fixed;
+    left: 48%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.employeeInfo-container {
+    margin-top: 6vh;
+    width: auto;
+    height: auto;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.message-container {
+    margin-top: 3vh;
+    width: auto;
+    height: auto;
+}
+
+.message {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.refresh-message {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.loading-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    border-top-color: #333;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button-container {
+    margin-top: 1vh;
+    text-align: center;
+}
+
+.time-in,
+.lunch-in {
+    height: 35px;
+    max-width: 25%;
+    border-radius: 18px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 14px;
+    text-align: center;
+    width: 100%;
+    z-index: inherit;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #32CD32;
+    color: #eee;
+    border-color: #4c7f0e;
+    pointer-events: none;
+}
+
+.time-out,
+.lunch-out {
+    height: 35px;
+    max-width: 25%;
+    border-radius: 18px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+    z-index: inherit;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #D22B2B;
+    color: #eee;
+    border-color: #ff4d4d;
+    pointer-events: none;
+}

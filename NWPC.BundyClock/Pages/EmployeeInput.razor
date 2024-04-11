@@ -1,0 +1,44 @@
+﻿@inject IEmployeeServices EmployeeService
+@inject IJSRuntime JSRuntime
+
+<MudGrid>
+    <MudItem xs="12" sm="6" md="12">
+        <div class="d-flex align-center">
+            <MudAutocomplete T="EmployeeData" Id="employeeInput" Label="Search Employee" @bind-Value="selectedEmployee" SearchFunc="@SearchEmployees"
+                             AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" style="padding-top: 4%;"
+                             AnchorOrigin="Origin.BottomCenter" MaxHeight="200" Clearable ResetValueOnEmptyText="true">
+                <ItemTemplate Context="result">
+                    <MudItem Class="d-flex align-center">
+                        <div class="d-flex align-center">
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(@result.EmployeePhoto)" alt="Employee Photo" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;" />
+                            <MudText>@result.EmployeeName</MudText>
+                            <MudChip Variant="Variant.Outlined" Color="Color.Primary" style="margin-left: 10px;">@result.EmployeeID.ToString()</MudChip>
+                        </div>
+                    </MudItem>
+                </ItemTemplate>
+            </MudAutocomplete>
+        </div>
+    </MudItem>
+</MudGrid>
+
+@code {
+    public EmployeeData selectedEmployee;
+    public List<EmployeeData> Employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = await EmployeeService.GetAllEmployees();
+    }
+
+    public async Task<IEnumerable<EmployeeData>> SearchEmployees(string? searchText)
+    {
+        await Task.Delay(5);
+
+        if (string.IsNullOrEmpty(searchText) || Employees == null)
+            return new List<EmployeeData>();
+
+        return Employees.Where(employee =>
+            employee.EmployeeName.Contains(searchText, StringComparison.InvariantCultureIgnoreCase) ||
+            employee.EmployeeID.ToString().Contains(searchText));
+    }
+}

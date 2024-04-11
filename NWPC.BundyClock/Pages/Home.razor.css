@@ -1,0 +1,318 @@
+﻿/*-----------------------------------------------------*/
+/* Outer rounded rectangle container for elements */
+.bundy-container {
+    background: #ffffff;
+    border: 6px solid;
+    border-color: #4cbb17;
+    border-radius: 30px;
+    width: 70vw;
+    height: 60vh;
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Inner rounded rectangle container for elements */
+.bundy-container-two {
+    background: #82b710;
+    width: 70vw;
+    height: 65vh;
+    border-radius: 30px;
+    position: fixed;
+    left: 48%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.current-date-time-container {
+    position: fixed;
+    z-index: inherit;
+    left: 32%;
+    top: 16.9%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Roboto;
+    user-select: none;
+}
+
+    .current-date-time-container p {
+        margin: 0;
+        padding: 0;
+    }
+
+.current-time {
+    font-size: 40px;
+}
+
+.current-day-date {
+    font-size: 18px;
+}
+
+
+/* Rounded rectangle container for numpad */
+.numpad-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: fixed;
+    top: 20%;
+    left: 66.5%;
+    right: 90%;
+    bottom: 40%;
+    z-index: inherit;
+    width: 15vw;
+    height: 20vh;
+}
+
+/* Numpad container for digits */
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(144, 238, 144, 5);
+}
+
+.digit {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
+}
+
+    .digit:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .digit:active {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .digit.del {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+
+        .digit.del:hover {
+            background-color: rgba(255, 0, 0, 0.7);
+        }
+
+        .digit.del:active {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+    .digit.dum {
+        background-color: white;
+        color: white;
+        border: none;
+        pointer-events: none;
+    }
+
+.switch-key {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.5);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+    .switch-key:hover {
+        background-color: rgba(0, 0, 255, 0.7);
+    }
+
+    .switch-key:active {
+        background-color: rgba(0, 0, 255, 0.3);
+    }
+
+.keypad-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: fixed;
+    top: 38%;
+    left: 58%;
+    z-index: inherit;
+    height: 30%;
+    width: 5px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border-radius: 15px;
+    gap: 2px;
+    width: 27vw;
+    height: 19vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(144, 238, 144, 5);
+}
+
+.keypad-letter {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+    margin-right: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+.keypad-letter:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.keypad-letter:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.keypad-letter.del {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+    .keypad-letter.del:hover {
+        background-color: rgba(255, 0, 0, 0.7);
+    }
+
+    .keypad-letter.del:active {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+.keypad-letter.dum {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    pointer-events: none;
+}
+
+.switch-key-abc {
+    margin-top: 2px;
+    margin-left: 5px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.5);
+    color: #fff;
+    font-size: 10.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+    .switch-key-abc:hover {
+        background-color: rgba(0, 0, 255, 0.7);
+    }
+
+    .switch-key-abc:active {
+        background-color: rgba(0, 0, 255, 0.3);
+    }
+
+.forms-container {
+    position: fixed;
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 22.5vh;
+    width: 32vw;
+    padding: 20px;
+    max-width: 100%;
+    top: 26.5%;
+    left: 10%;
+    z-index: inherit;
+}
+
+.submit {
+    background-color: #3464b1;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 40px;
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    z-index: inherit;
+    border-radius: 25px;
+}
+
+    .submit:active {
+        background-color: #06b;
+        z-index: inherit;
+    }
+
+.time-in,
+.lunch-in {
+    height: 30px;
+    max-width: 45%;
+    background-color: #e6ffe6;
+    border-radius: 18px;
+    border: 1px solid #32CD32;
+    box-sizing: border-box;
+    color: #32CD32;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 14px;
+    text-align: center;
+    width: 100%;
+    z-index: inherit;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.time-out,
+.lunch-out {
+    height: 30px;
+    max-width: 45%;
+    background-color: #ffe6e6;
+    border-radius: 18px;
+    border: 1px solid #D22B2B; 
+    box-sizing: border-box;
+    color: #D22B2B; 
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+    z-index: inherit;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.highlight.time-in,
+.highlight.lunch-in {
+    background-color: #32CD32 !important;
+    color: #eee !important;
+    border-color: #4c7f0e !important;
+}
+
+.highlight.time-out,
+.highlight.lunch-out {
+    background-color: #D22B2B !important;
+    color: #eee !important;
+    border-color: #ff4d4d !important;
+}

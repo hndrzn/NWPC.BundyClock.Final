@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    @Body
+</MudLayout>
+
+<!-- NWPC Logo -->
+<img src="images/nwpc-logo-for-header.png" class="nwpc-banner" alt="NWPC Logo">
+
+<!-- Objects for Top part of the web app -->
+<div class="top-border"></div>
+<div class="second-top-border"></div>
+<div class="third-top-border"></div>
+<!-- End of Objects for top part -->
+<!-- Objects for Bottom part of the web app -->
+<div class="bottom-border"></div>
+<div class="second-bottom-border"></div>
+<div class="third-bottom-border"></div>
+<!-- End of Objects for Bottom part -->
+
+<MudThemeProvider Theme="MyCustomTheme" />
+
+@code {
+    MudTheme MyCustomTheme = new MudTheme()
+        {
+            Palette = new PaletteLight()
+            {
+                Primary = Colors.Blue.Darken4,
+                Secondary = Colors.Green.Accent4,
+            },
+        };
+}
