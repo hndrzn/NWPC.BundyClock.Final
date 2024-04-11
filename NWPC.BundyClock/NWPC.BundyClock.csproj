@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\layoutQueries\**" />
+    <Content Remove="wwwroot\layoutQueries\**" />
+    <EmbeddedResource Remove="wwwroot\layoutQueries\**" />
+    <None Remove="wwwroot\layoutQueries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -15,10 +22,6 @@
     </PackageReference>
     <PackageReference Include="MudBlazor" Version="6.17.0" />
     <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\layoutQueries\" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@
     border: 6px solid;
     border-color: #4cbb17;
     border-radius: 30px;
-    width: 50vw;
+    width: 60vw;
     height: 60vh;
     position: fixed;
     bottom: 50%;
@@ -20,7 +20,7 @@
 
 .container-two {
     background: #82b710;
-    width: 50vw;
+    width: 60vw;
     height: 65vh;
     border-radius: 30px;
     position: fixed;
